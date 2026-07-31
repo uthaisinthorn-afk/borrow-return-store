@@ -428,7 +428,14 @@ let stream = null, scanning = false;
 async function openScanner(){
   document.getElementById('overlay').classList.add('active');
   try{
-    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: 'environment',
+        width: { ideal: 1920 },
+        height: { ideal: 1080 },
+        focusMode: 'continuous'
+      }
+    });
     const video = document.getElementById('video');
     video.srcObject = stream;
     video.setAttribute('playsinline', true);
