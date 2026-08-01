@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>พิมพ์ QR Code อุปกรณ์แผนก</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Sarabun","Tahoma",sans-serif; margin:0; padding:16px; background:#f2f2f2; }
+  .toolbar { max-width:900px; margin:0 auto 16px; text-align:center; }
+  .toolbar button { background:#0f7a72; color:#fff; border:none; border-radius:8px; padding:10px 22px; font-size:14px; cursor:pointer; }
+  .sheet { max-width:900px; margin:0 auto; background:#fff; padding:10px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .qr-card { border:1.5px dashed #999; border-radius:10px; padding:10px 6px; text-align:center; page-break-inside:avoid; }
+  .room-name { font-size:12px; font-weight:700; color:#0e2a3d; line-height:1.25; min-height:45px; }
+  .room-meta { font-size:10.5px; color:#6b7178; margin:2px 0 6px; }
+  .qr-img { width:100%; max-width:110px; height:auto; }
+  .room-id { font-size:10px; color:#999; margin-top:4px; }
+  @media print { body{background:#fff;padding:0;} .toolbar{display:none;} }
+</style>
+</head>
+<body>
+  <div class="toolbar"><button onclick="window.print()">🖨️ พิมพ์ QR Code อุปกรณ์ (14 รายการ)</button></div>
+  <div class="sheet">
+    <div class="qr-card">
+      <div class="room-name">กระบอกฉีดพ่นแรงดัน POLO 1.5L</div>
+      <div class="room-meta">ITM001 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACZUlEQVR4nO2ZQY4rNwxEn4YC/lIGcgAfhX2zQY6UG8hH8QECsJcDsFFZSB5kE38jAeIW8LlqdC1coslSkV3Eszg+nsLwC/9vOAoAU1e4qWcTYOEAeL6b3wu4SwLKtX9d/Md9U3BcMElxCn4/xUvZ2De7b+xbcqtNCeylnoTfs6jfT1+//fFDt+Oqo0Dr9Rz8Xsa94l/ls+4bTXbf/u/f/5d4BQSVG3sxUZP653ZcnCb29/N7Ab+VUsAtnH1j3wALjlLK5RT8nodGBAkmATRlm69Pr58onMG8Seo0WcyD2Br8UXg20Xoyny3IJtoK/NVN3cIlmbokk2gdyCXu331LSKiQ+yd7yWkq3OIM/H4SCiycJguX+qOFO7CC/0GBJIWbNA6STQqGBC3AX0oYskObLQDOGvWPwm1IEENzuoWblHguoj/A6NbRCxYA8xTv5vdS/bQ+OjdbV0DrFmTra+j/VH5J8/6y8AQLX6T+SXykPZvmH4GbpFiDvyTaaNiH/4l16j/4Trg9VEjhUl9D/8PtcYShQqaeC+m/Oq1n6/YYBCRlW0f/Y257hmEe5nM4Ulujf32mumlMkdn641JYIv8u9WF4Zv0E4KMdTs//AzgujCu47htQcQsqZOun4Pc0FD6T/zflAcDX8A8P2Zm2Z772KUTv5veK/vDYPzPG4elCV6l/l8T+eVxuQIXjqoTklufg9zxG/Q/DPLQURhWtkv8Zdt/Ktdf2ezaZ+hhnTsTvH+I7/6YOw3mO4b2v4H8+mBZIxwWaEr6usnth31bY/3zM/fO+AXArV9W91NaBFfbP5df307fifwFRPgTNWoir4QAAAABJRU5ErkJggg==">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ไม้กวาดดอกหญ้า</div>
+      <div class="room-meta">ITM002 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACZUlEQVR4nO2ZQW7jMAxFn0oDs5SBOUCOQt+s6M3Uo/QABehlABp/FlLbWQzSYAo0EVBu7Pgv/KWQn59yEZfieLgIww/+NRwFgKmBZ21ZBVg4AJ635ncF7lLnDPvjr5dNwbFikuIu+H2Kl7Kxb8eKqSXPS1UCe1nuhN91uPRU1ufjpHMpS23f/v6v4mX13B+XfaPKXrZvf///4Qugftm3JpZked2O1alivz2/K/DnUgq4Bcu+sW+ABUcpZb0LfpdDPYJ3IaIq63h89/qJwgGTsjapUWWBdUWdgz8WrvCEBIVnlQVZRZ2Bv8a2SzI1SSZRG5BT9N99WyD3razk/shecpgKt7gHfp9Ezx+qLFxqNkq4ATP4HxQoXOGm1heSVQq6BE3AXy2rqK1z7iUAzhz5Ty9YhSfeF2LhJvWfc/APqE3hvRYsAMYqbs3vmvwxKelttymgNguytjn0P9yk3n97/7LwBOsZdWt+182PrsDUsurt7/BRFLfmd5V+9v3He85YYDFP/gfvG94zJ6sULrVJ9F822q4D1hNpIv0fPbeZ1LVUUtaJ9L9Rh+fJOsxn9xI2R/363yVs4Vmbxjgzw/6/2c6eOYqhqInP4D8fgLJyLtv51JZ9A5Y+y0PWdhf8LkZ3bhYkH8oDgM/hH97PH7rtGY9HUUzAP4BxWpvdzg0XOkv+uyT2cqwOLHCclJA8533wuxwKH6P6m+eEnkWz7P9HnE9tqU99irQupHfF7x+xvN/Z67pQ7GW115K/I3k6Vr85v2vwvyyEEs4n2Uth32Y5/2FMu406FmJqowvfmt9nePn5fnpT/A8aPwdkYYZC2QAAAABJRU5ErkJggg==">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ไม้กวาดทางมะพร้าว</div>
+      <div class="room-meta">ITM003 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACYElEQVR4nO2Zwc3jRgyFv1kK2OO4A5dCdZCSgpSUAgKMS/kLCEAdA9B4OXB0XMdIgFgDLA+GLR78jUS+eUM18Sqe316m4Wf+v+VRAJhG4vSRXYCFA+D5ab438i4J2CDx71+7gucNkxSX4HsZG9Bwjt0SvvY8HlvqucFxsz8/z/cOf0Xy2Pvvz7ueDfrYrsH3fr7dyOPX7djpsq/9f///f5dH4ZIsPHGTTLJwcJMUS/Tvo7UGfA84do4dsODZWrtdgu91qCJIMAmgK/u8fPn7j8Ip/e/DNOiymAuxdfgVTh/1JbssyC76Cvyatz1x05BkUq0lF9h/UZB9SKJL4YrqiAG+gv6gQOElm9I4W3gAK/ifya9w07DwKT5BSdAS/NkHXQroqhYAZ536Nw2FJ55d9GHhJtXPFfjdJHBpWGDhFgBzFZ/me2f/zT6yD/DsQwF92FlUC/BHnV9cGlmPIzyhHN0K/LXnDijNGVX8i/jP6l9N2n76n1in/gOTEkr/s55CuDTW0H/JZs2QYHHOItbR/xqbnFVUirSa/vdBF32az6olW6N/3cIVDp64hZcdnZ+f5ntP/we4lXOOmsh54iv4z5mv8+927MCGW7BB9nEVvh9HOTdKfE7lAcDX8A/n/GHannl5HsQW4A+Auf/WcXi60FXq3yVx7O32ADZ43msve+Q1+F7GOX8Gemzxyx/NOVreaPh2Ab6384882vM+tv5bdpmGlZBehu9HUTtX2R7K/8zD+1jB/3wDpEE/J5/w11321Th2i2vw/UP+0VqrsTM82l3b0bY+gBXmz+3n+9OP5v8Gx4MN/Nhrz8IAAAAASUVORK5CYII=">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ไม้ถูพื้นแบบเส้นด้าย (string mop)</div>
+      <div class="room-meta">ITM004 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACeklEQVR4nO2ZQYrkOBBFX2QIainDHCCPIkMfYI401MEG5KPkAQrCywKZ3wspu1adk3TDpAUdi0R2LPLZKP4PhU08iuPyMA1/8r+XRwHgqoriqi0L8CgAlPZqvifyRRJgC43ydlsVHAsuKU7B9zASYBT21RtHKm3fUtORYF/84/V8z/D3aGzftB1XHQa5pnPwPZ+3hU/7J+0rWX5b//f//7U8iiKpF6xLPtbFJcUU9buZGV1z9pV9BTw4zGw5Bd/jUI+gUVwCyGp53D79+0dj51RydVWyPOgP4nPw88MCGihKy/KgZZFn4FdtuXrHVpXkErkCbQL/RQG5SoKiKIpeEbVfTsHvUcjyKFK9l3AFZuh/kGrXn6H8XXyCLkFT8Dcg116zvQSgMM/+9ygKGl1zqkdxqVHaFPoTw7b6U3gUD/rlHPqv2nLtLkBfjL1U59D/YVil3f2rrz3KXPvfh+bUvvkn6T/phnUv2Hv/E/Ps/8ClxtD/rkKK0n3h9PwXgH19kw5bjwUP3mI7FszWw9Zz8D0KxWj4R/MWSGp5Hv2XPCALCnk0n67qXYhezffk+eVHCXuUlquk8ftqvuf0v5JFP0vGONE0ygz95wV4C3RbG6R9BRLFgwQt11PwPQxFf9U0cNW+Bno5nP79f80funO1cXscxE7Pf2E3M0tZfluPBVft/psoZufX/8sYPuzrsWxAguOqBo2tnYPvYdznz0CO9PH3v1bYrS0YJZ2A7+n85jf7vNaU37sXexfS0/D9JL7m58e1Jsxvi39Y+ysa78dSXs73TF4a/kVWg8+r/Gbsq8c5+P4jv5lZHzvDZlel3VKuwAzzZ/vz/fSl+e9lXPrMijCVowAAAABJRU5ErkJggg==">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ไม้ถูพื้นแบบผ้า (cloth mop หัวเหล็ก)</div>
+      <div class="room-meta">ITM005 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACe0lEQVR4nO2ZQWrkQAxFX40KsixDDpCLDMg3C3Oz6qPkAAF52SDzZ1HuZDWdZgbGNkQLt/Ff9K/y15esKuJerD/uwvCN/xuOAsDULVzq2QRYOACee/N7AHfpJqLl9eltVrBOmKQ4BL8v8VJmlnmdWF96cqlNCSylHoTfvagfd+LylJefL1oLtF6Pwe9xvEx+La91mWmyt/m////f4RUQVMhaJGpS3+d1cppY9uf3AH4ppYA/hddlZpkBC9ZSynQIfvdDI2K7B2jKtj0+vH+icMAkWpc6TRaYNB4enn8F7H1KyGcKaJmvz6rLlM9Rptid3wP66bRu4Qo3dUnjXQB5ivq7zAquE2Uil1eWkltT4RZH4PdFKFC4SaP/sS2FO3CG/gepD/8ZS9jMJxgWdAL+QeLDdmgaKQDOOfSPJIuxCrJp5LJJiWc7w/7rc+ctsHALgG0Ve/N7iL80KhetK6B1C7J1TrH/4TQxchYUbuEJFn4O/QeJZ+u0nk3DQhM3SXEO/jYkFGMVsmBLhFPoP7hteB/KySaFj7pwDv6bYZK4AlPPE/l/OK1n66Y+Zg6Ssp3H/2P8OpBtaz6Hluwc+euJKxw8cQvP1iVt1735PcS/9TFwG43caJ4TP0P/ueHXCanXZQYqbkGFbP0o/P4cQz8WJJ/OA4Cfo3/4mD80jVUA4JsR7c3vge/HUkqpTfZW1olbF0rFS5kPwO9L3CWxlOvkQIX1ZdSySx6D3/0YzvnR898qL5zKfwAF60uv7VfevmXOMP//nJ8XYCn2Ntl7yedIfq2T787vEf1sMyvgY/IQ21zl8Pq5nX+F0zqtM86/1LcqvDe/r/DyfX66K/4bOJj30/mBJUcAAAAASUVORK5CYII=">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ไม้ปาดน้ำ/ยางปาดพื้น (squeegee)</div>
+      <div class="room-meta">ITM006 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACeUlEQVR4nO2ZQYojORBFnyoEtZShD+CjhG5W9JHqBjLMRXyAhtDSoOTPQukaBgaXmYFxCjoWxpl/4ZfJ11conMSj2t4eyvBb/286CgBTGziljSLAwgHw8Wq+J3SXBOTSFP5+rQq2EyYpDsH3rZ5SpVe7VnodXHLRAHrKB+F7VPnr2+3HZyqf21lbgtLyMfie1j3jo3/kXimya/2/f/9f6hkQZC4j1z9EHuRfdTs5RfTX8z2hX1JK4O8BvdIrYMGWUjodgu9xaVYwcJMAikbZbx8+P1E4YJrMjSIL5oPYIvzz5X9djiILRhFlBX61URpFCjc1SSZRGjCW2H97fQ90rRlG/6CnsTcVbnEEvm9KgcJNsnCp3ZdwA1bof5DaXAKmZuF7+AQzghbgDx+lUdpknksAnDX8v5tnRtAoojQLN2leLsCvdv8iCyzcAmB/ilfzPZmfA2ZsKqA0C2aoLsAfvm9VMKadwgdY+CL+B3yUZmqzhZjmN0mxBr9Jc/+dnrFgXwhL+D+4v/A2nTOKFC61NfJfzWbPs/v/PotYJf/VKJr+N8kCSaOslP+mBj5wyt58Ti/ZGut37/8VDm7hozRJ++er+Z7uf3bnKO6Jiq/Qf74BGQbczi33CmTcggyjtEPwPaxpG/6ePAD4Gv3Dff4wLTT2264ZRK/me+L8mFJKuTS71ttpnmKwIOMp1QPwfau7JPrH7XQBMmzn2ctdxjH4Htc9NhmlKfy+88I6+TMr97qdWy4/5ynSZpAeh++f66/5OeUzk+x6sl9p/IjBz+3kL+d7Rv8aG85TzO0suyZ6XWH+87bPn3sF4JLOyj3l0oAV5s/p9/+nL9X/BBt79dTTqV4zAAAAAElFTkSuQmCC">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ที่ตักผง</div>
+      <div class="room-meta">ITM007 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACfElEQVR4nO2ZQW7jMAxFn0IBWcrAHKBHkW8wRyrmYAXko+QABehlARp/FnKKmcWkwRRoLKBc2Iq58FNAfpJyErdsO910w7f/c37kAKYGNUqLIsC8AlDj0Xx3+KskwNTs8ny+zHK2CZPkh+D70J/SzDpvE5QWLLkogDXlg/Dd5w+WNC3bk95SyqV9+fs/6a8ZYn3O60yRXeavfv9/+jOgflufm8hBfp23qVLE+ni+O/xLSgkwJ68z69zXW0ppOgTfbVM339cARVH2x4fXT+QVMLUoMjWKzLFdUYfgJ6jRixfIaxSZE0WUEfjVKK3HjKlJMonSgBii/q5zQMD5Msf6zJpibyqq+RH4PjA55pUi8yo121O4ASP0P0hNXuWYWt9IFMnpEjQCv3qqyuGaAlAZI/6RmqntKlREaebVpP5zAH6H6//fc8EcYN/Fo/nuiR+TovTgb3IozZzoovpovrvqbxcfp9cv8xpgXseIf6frD3TNaT34TZIPwi9ResJe+x8fJ/4dkwJM6pETRfIqtUH0v1lPYSr7dlqMpP+itPfmrYdTlFH0/9QHrgxvad4mclGalrMvZ+d8mQ/A94HtglkURdDXTdJ+fTTfPfy9eJmzx48DNagj9J8noFfbgLzOQKaakyFKOwTfTZPXPqr8qTwA1DH6h/fzhz727o/rLkSP5rtDf1JKKZdml/Q29SkGczI1pePrz2k/f17nbapAhu1JAcESx+C7aRlIVKgvGfOfL6mypphI1KHOnxdY0lPL5VevxT2jj8P3D8t/rdZkl8leU/zw4Nc21Yfz3aOffQQzh/eTB9/ngsPrz/X7l1e7HsQBfaIfof6m7++nD/X/BpSZ+qqMIuOMAAAAAElFTkSuQmCC">
+      <div class="room-id">หน่วย: อัน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ถังพลาสติกสีดำ (Hi Price)</div>
+      <div class="room-meta">ITM008 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACaElEQVR4nO2ZQW4bMQxFn0oBXco38FE4N+iRgh6sgHyUHKAAZxmAxu9CM9nVGTRAxgLKncXFPEnU55dcxKO4f3uYhv/5z+VRAJh6NmXr2QRYOACeZ/MdyLskoAL499dFwf2CSYqn4PswX8rCutjrYkFyq00JrKU+Cd+x/Nv1Z7nc7le9lVJb//LvfzZf8Vxf6rrQZK/Ll3//3/IVEFTIunRRk/p7uV+cJtbz+Q7kb6UU8O9BXRfWBbDgXkq5PAXf49CI8NyFiKZs2/DT6ycKB0zK1qVOkwUmbYNn8x3rX/vKg8KzyYJsos3Ar07rNCVu6pJMonUgp+i/65KQ61Ih1xfWkvumWDwD3wehQOEmgUvdtiPcgRn8D1JX+JiChW/iEwwJmoA/SJzWx5kdRwCcOeofqVv4mEU20bqFmzR+TsAfPty+Agss3AJgm8XZfAf7b7aeeLauYK+lPof+7ydXQe7bkWDhc9R/oPAEGJrTR/HbMEVn8x3hN2mjbbv/iYnqv28FI1mQYxfCpT6H/uvdcPrwDKaeU+k/eLY+qsgCSdnm0f9hG3DwbJv5NHUbQnQ23xH9fG++iVt4tq7tOjPD+ofT+lh2SYrNPOfYkbP5juRH58p1qesCVNyCCtn6U/A9DG3FPxrBpjwA+Bz+YX9/2GzPNuwaQnQ237H7O6YNXuq7C52l/l0S68vbxStUuF+VkNzyOfgeRgXKXvP2+8ev4qwlLxR8qvfnW+V2v/bafo5bpA0hfRq+v8XQn2F7YDjPzUjP4X/CtTsf3l8eYr8XnM13VH/CbX+IA0x968Jn832UL///Pz01/wc4+AYeshz+EgAAAABJRU5ErkJggg==">
+      <div class="room-id">หน่วย: ใบ</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">รองเท้าบูทยางกันน้ำ</div>
+      <div class="room-meta">ITM009 · ยืม-คืน</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACaklEQVR4nO2ZQWokMQxFn2NDL1WQA/RRXDcLuZn7KDnAgLwMqPizsDvMZpJmAuk2jBaNq7WoX8XX15cqic/iePo0Df/z38sjB8hqmLAWJiB7BaDGvfHdkK/SwEz0l9PbLufYyJL8IfB9mU9pp+/HRnaCSzEF0FN5EHy35YNLOr8eZ72nVKz9+P2/my8Q/aX0HVN+23/8/v+WR14lZa9Qs5T/OMuXqN9LSgnIDn2n7+N8pJS2h8D3eWiEVyBLAKaw+ffDv3+uyFtYG10g+3yQvAD+AuRfW1APeE+o7+/PKn2LZ0+b3x3fDfxpYQ2TpKwmKUtYA2KJ/tv3kyMnpT36Cz3FNBU1+yPg+yLkZK+YoErtWsINWMH/IDV5ldep/EN8nCFBS+APGLKDzRKAyhr8R16zIyeoYcJa9pqlcbkAfmnIvqRRC9kB5lPcG98t/MFaQJjCmhysZWeI6gL4vUrCFBCTTjUge12E/1yVs4VpSGgs4z+RjxIYBXv1P74S/wdVslp2RiHIq9QW0f9pOAOCmp2sFgvpvwSEKc9BAElhq+j/Ez1BLcyBq5jSdjn55eSc3vYHwPdFTME0aVSB17Amaf7eG99N85c1qFib/HGgBnUF/znzo/OWvgOFmp0CYe1R8P09NLYljv5QHgDqGv7hY/9gU/8BqFOI7o3vNv9Anl1stLPhQlfhf5VE34/tUqDAcR697BKPge/z+OB/2DQSMFi0yvu/Rt/fz63Ya5iGF1ph/18+TiffCim/bflXimcPXo+t3h3fjfNL/pgix+bBkbOC/3+a++e+A3BJZ5U+v1+ssH9O/7+f3jX/G4t9AZotqoK4AAAAAElFTkSuQmCC">
+      <div class="room-id">หน่วย: คู่</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ถุงมือผ้าฝ้าย</div>
+      <div class="room-meta">ITM010 · เบิกใช้</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACXklEQVR4nO2ZQW4jMQwES6sBfOT8IE/R/CzYn8lP8QMW4BwD0Og9UM6e4hgbIB4B4clWH6YxJrtbdBH36vrrLgw/+Ndw5ABVHRMQJqB6A6DFs/k9gDdJAPsm6XTZ5FxXqiQ/BL9P8VI29g3rQHBeTAHsZTkIv8fw4FzW8/VFb6Us1r/9+V/FF1rsr8u+YaqX7duf/3/4AggW2nkvVSzB8me7rg0T+/P5PYCfSymk5uwb+wZU51pKWQ/B734py1t+BjCFjePD6yfJvEphXeqYqlOlcfhsfo/4V3XCFBAgb2HKE2wG/uphHZq8VXVJVbp5wQz+u29AWC8rsb+ylxiholU/Ar9PSk71ViVoUq9jhDswQ/5B6pLkVKl6G+LjpARNwN9bANaTc44ANObof6RevckbtDCF9WynyK/P5vdQ/0uYqlRzFhwYQzEBf/UU/2FhDtarE9bn0P8UH5PU07+qt4DqbY7+96QK1sOUEhq0Ksnn4C8Jy4G95R+fp/+dquz/nj9EmOQtfWEC/ur11jNBq05Vj4n03yHfuXpKqKSwWfT/V+a0BcrK2wqmsp5Pfj45p8t2BH7369155dk/LaxrXGeO//6RN6xjwkaQy/ActBny58B12XTZln0DlltHhfWj8Pu4bm2TQjqUB4A2R3543z/ktXcct/S1Cfg7kJcXGHE6U+gs/d8ksZe3tQUscH3JXcQ5jsHvfqV+vmf+m/PCVPpD7gxf+mK/8xaZE30gfh/Uv/dvHTJ5jjgxSf5pubOqDu+bB0fOLPmfXD5bH0YMVX248LP5fYaXn/9Pn4r/BbxdA3FGUf22AAAAAElFTkSuQmCC">
+      <div class="room-id">หน่วย: คู่</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">น้ำยาฆ่าเชื้อพื้นผิว Bossklein</div>
+      <div class="room-meta">ITM011 · เบิกใช้</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAAChElEQVR4nO2ZQYrkSAxFX7QCahmGOkAdRb7BHKnpI/UBGiKPkgdokJcFMn8W4cxeTbaZgbENrUWSYS3yZfD1FSEX8SrWLy/T8Cf/3/IoAEw9mxKyCbBwADyP5tuRd0nA23228Lf7rGCdMElxCr7f5kuZWeaxTm61KYGl1JPwvYr6/Pb5/r207+uH1gKt13Pw7c9XyOVrXWaa7D7/77//7/IV0ICvs0RN6s95nZwmluP5duRvpRTwt/C6bIVgwVpKmU7B9zo0IjxxkwCasm2PT++fKJzN/7up02TB+CN2Af5hM/5jitJYC1rmz3fVZcr3KFMczrdDP53WwbPJ1CWZROtAXqL/LrMFCuoy5/KVpeR2qHCLM/D9JhQonCZwqT9KuANXOP8gdUkKTLLwzXyCYUFX4FfiNCngUQLgXEP/KNyGhPBsytYt3KQcy6P59ujHAmBUsYU/ln4F/0fS1rzCs3UFtG5Bts4l9j9c0oDPTU6eYOEX0T85nHPznD7Eb+NQdDTfHn6TaFL40IwFFtfRf/Dc8KGcbFL46AsX4Fe3Z9vFLTD1vJT/g2frz0YsKduV/B8Ap4m2HT5N3YYRHc23Z/9zSKUp8a0LSNvn0Xy79NO6hdMe+gnAE7/C+fMLoOBzIqEuM1BxCypk66fgexnj5s5mpJvzAKMiTr//v+YPo3Pl9tg3Izqab0//gsfl5XEcHeZzEf27JJZ5nW4JFdYPJSS3PAffy6hAGZpvUeOvH8VZSk4U/Arz52f+pnv5/Oi1fRuDlHGdOQ/fP8Sv+XmBSrH7ZD9LvkfybZ38cL699xdpDA+3yUNsc5Ur1O+tlMIyrxNwKx+qS6mtA1eYP5c/708Pzf8NTd/5VHysqosAAAAASUVORK5CYII=">
+      <div class="room-id">หน่วย: แกลลอน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">น้ำยาทำความสะอาด (แกลลอนสีม่วง)</div>
+      <div class="room-meta">ITM012 · เบิกใช้</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACXklEQVR4nO2ZQYojSQxFX7QSahm+QV1kQHmDOVIzB2sIH6VuoFw2yPxZKMq9GpeZgXEGtDBJZmrh7+Dr60tu4lHcvj1Mw+/8f8ujADANkyzILsDCAfB8Nb4n8i4JuF3IrrePXcHtgkmKU+D7Mt/azrFz7LcLyXXrSuBo20nwPYrtfieub3n94123Bn1s58D3dN7bhZ/t+3bsdNnH/n9//7/Mo3BV5eImmWTh4CYplqjfa2sN/C2oKgAsuLXWLqfA9zhUEV73AF3Z5+vTnz+F3DTomtfAJMAWwZ+4wvP+2D8bWV8Bv0b2YVJ2mYYkk+gDyCX677Fb8LPtbx97Ht85Wk5T4RZnwPdFKFA4XeDSsFnCA1jB/yANhSswDQuf4hOUBC2BP/ugj6rZKgFw1uA/VbClotmVfVi4SYnnGvoze9ZkUbgFwPwVr8b3HH9UgpN9KPjk0lhD/8PLs0kj6zE8wcLX4H9QygmlOaPIv4j/RIF9lnBxxgKLdfgf3A+8mJNVyxpr6H+dtlT+zQLTyJX0fwDZRx24BZKyr6P/gWmUeGaf5rO8hK1Rv14fk8AtPPuQNK+vxvfU/NXn8CVJMRU18RX85zfAgoSE7diBDbdgg+zjFPgehmpbEiS/lAcAX8M/3PcPNfbO164Solfje84/1PBCgjRm841V+O+SOPbbxTfY4PauhOSa58D3MDag4eA/NnT8+aM5R8sLDV9h/3zPXzeu7X1s/a+aIq2E9DT4/inu+lM7hzKfZaTX8D+1f/41RZb/nHuVFfDDnHZHNWLANGYXfjW+r/Lt9/+nL83/DQqJEk3rk+PQAAAAAElFTkSuQmCC">
+      <div class="room-id">หน่วย: แกลลอน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ม้วนพลาสติกใส</div>
+      <div class="room-meta">ITM013 · เบิกใช้</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACXUlEQVR4nO2ZUYrbQBBE32wP5HMMOcAepQU52LI3Gx9lDxBofS60qHyMlOxH8JoEYg2kMbZQf7g8VFWX2kXcqu3pZhv+9/+ujwLA1CUpyCbAwgHwfDS+O/ouCagA/uVtUbBdMElxCnyf9ktZWBdgu5Bca1MCa6knwXer6s+r5PpN1+1ZW4HW6znw3d33cvH38lLXhSZ7W/719/9hvwIaH+vSRU3q92W7OE2sj8d3R/9aSgEsqOsuBAu2UsrlFPhul0aFJ24SQFO2/fbp/ROFAybRJHWaLBg/xObAP15O6wkKzyYbg6zNgF+d1k1S+JjCJtE6kFPM33UBEirk+sJacg8VbnEGfJ+UAouhXJf6IeEOzJB/kLrCFZi6he/mEwwLmgD/IVULaBoSAGcO/jNOfrhoNmXrg06J5xT+E04TIHUbWghgF8UE+DU402nK1hXQugXZ+hz+Hy5pgB/zy8ITLHwW/msAVs+mYaEjCykmwS8dgj3yT8zD/8Ckcf6DOdmkcKnP4v9H4By0x9RzIv8fyA/mDzplm8f/R9ps2qewROuDSzaHft2CIzO4hWfrkvb3R+O7b/6OzLCv4EZ4TnyG/PkEJGTr72Wp6wJU3IIK2fop8N0shR9p85fzAOBz5Idj/zAmV+63fTeiR+O7x//5MLw+pNBZ+O+SWF/eL9cKFbZnJSTXPAe+2zX4PwLz2GLBYNEs53/UumzPvbbXbDJ1G0Z6Iny/rfrxqlLs7WLfS36N5HW7+MPx3fn8YkeK2DcPx1JuBv5cSymsiwVwLc+qa6mtAzPsn8v//08f2v8BLTsB+nAHOxIAAAAASUVORK5CYII=">
+      <div class="room-id">หน่วย: ม้วน</div>
+    </div>
+    
+    <div class="qr-card">
+      <div class="room-name">ผ้าเช็ดทำความสะอาด</div>
+      <div class="room-meta">ITM014 · เบิกใช้</div>
+      <img class="qr-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACU0lEQVR4nO2ZQaobQQxE36QHvNTc4B+l52bh30w+im+gWX7oobJQ24ZAbJNAPA1feGFbCxeySlXSTOJR7D8epuE7/295FAAlaKYGzQSUqADU9m58L+SrJKjztp6CEudm3qBIikPgexyKCjXRNhNUBZJKUGKI+gOwTZjPnJv5vjAtR8P3LG8+bz/LZYVzidq29T///t/mZ0Aww/4R+1wB7PMkZhPb+/G9PH/qby9ghPmDMgLJm3kzlailf6sB8EfFHHOggeQ5Tou8DVH/qIqUgP6xmVLOsCHqDybMGx15KlqzQfqnK5ff9KsEDRSUIfBHUkBQJS/ZSObAIPPHMZccaksKR4UKDMNfqUhFupE334/C3xJVAdRmauY5/5POA+CXsoVuFMBcUXtHvRvfa/4ZRW2Qw7NRMe9/wbvxvZJvptm8BF8LCk5B21a29Sj4HobkOXNKUOQl15kg5eDw9SfdDuZFni5OSjlGA+xfV52FIpWoucInf8fwD1GbecnKB6m/6d8GwU+RS16CRm29+WufRe/G9+L9If0npiIlF3ILOzz+H5grzgpm0GVqnHVZ94V94Ws5Ar4nITnQ/T/9FlTUV5jD17/vj7kFpBG67u/j+J8Ak+TNdBMCGOL+dr8/dNvTLXTVKPzdpmma5jRv29rs83SZyIvWcgR8T6LvL4Hkt7JDP0ocvv73+zPcLyfZ/yPw95rfphLnGfYPB5II5bIeBt/TfN0/XJdVUWfOc35nfhx8f4rr/u63zgeaeTbV4fvnfn/uV9B8/tUl4Pjzc/p+fvrW/C8rNBtAF8HtqgAAAABJRU5ErkJggg==">
+      <div class="room-id">หน่วย: ผืน</div>
+    </div>
+    </div>
+</body>
+</html>
