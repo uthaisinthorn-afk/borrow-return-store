@@ -471,28 +471,13 @@ function tick(){
   if(!scanning) return;
   const video = document.getElementById('video');
   if(video.readyState === video.HAVE_ENOUGH_DATA && video.videoWidth){
-    const vw = video.videoWidth, vh = video.videoHeight;
-    const wrap = document.getElementById('videoWrap');
-    const frameEl = document.getElementById('scanFrame');
-    const wrapRect = wrap.getBoundingClientRect();
-    const frameRect = frameEl.getBoundingClientRect();
-
-    // video is object-fit:cover inside wrapRect — map the on-screen frame
-    // box back to source-pixel coordinates so we only decode what's inside
-    // the amber corners (avoids grabbing a neighboring QR on a printed sheet)
-    const scale = Math.max(wrapRect.width / vw, wrapRect.height / vh);
-    const cropX = ((vw * scale) - wrapRect.width) / 2;
-    const cropY = ((vh * scale) - wrapRect.height) / 2;
-    const sx = (cropX + (frameRect.left - wrapRect.left)) / scale;
-    const sy = (cropY + (frameRect.top - wrapRect.top)) / scale;
-    const sSize = frameRect.width / scale;
-
-    canvasEl.width = sSize;
-    canvasEl.height = sSize;
-    canvasCtx.drawImage(video, sx, sy, sSize, sSize, 0, 0, sSize, sSize);
-    const imgData = canvasCtx.getImageData(0, 0, sSize, sSize);
+    canvasEl.width = video.videoWidth;
+    canvasEl.height = video.videoHeight;
+    canvasCtx.drawImage(video, 0, 0, canvasEl.width, canvasEl.height);
+    const imgData = canvasCtx.getImageData(0, 0, canvasEl.width, canvasEl.height);
     const code = jsQR(imgData.data, imgData.width, imgData.height);
     if(code && code.data){
+      const frameEl = document.getElementById('scanFrame');
       frameEl.classList.add('locked');
       setTimeout(()=>handleScan(code.data), 120);
       return;
